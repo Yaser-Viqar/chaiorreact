@@ -4,31 +4,32 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [color, setColor] = useState("yellow")
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+   <div 
+   style={{
+    backgroundColor: color,
+      width: "100vw",
+      height: "100vh",
+      margin: 0,
+      padding: 0}}>
+   <div style={{ position: "fixed",
+        bottom: 0,
+        left: 0,
+        width: "100%",
+        backgroundColor: "red",
+        display: "flex",
+        justifyContent: "space-around",
+        padding: "15px 0",
+        borderTop: "1px solibgchangerd #962d2d"}}>
+       <button onClick={() => setColor("green")} style={{backgroundColor:"green", color:"black"}}>green</button>
+      <button onClick={() => setColor("yellow")} style={{backgroundColor:"yellow", color:"black"}}>yellow</button>
+      <button onClick={() => setColor("white")} style={{backgroundColor:"white", color:"black"}}>white</button>
+      <button onClick={() => setColor("blue")} style={{backgroundColor:"blue", color:"black"}}>blue</button>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+
+   </div>
   )
 }
 
